@@ -7,4 +7,5 @@ fun main() {
     val second = seconds%60
     val minute = minutes%60
     println("Время полета : 0$hour:$minute:$second")
+
 }
