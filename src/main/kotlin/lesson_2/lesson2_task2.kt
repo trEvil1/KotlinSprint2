@@ -7,10 +7,12 @@ fun main() {
     val numberOfIntern = 30
 
     val payCostEmployee = payEmployee * numberOfEmployee
-    val payCostFull = payEmployee * numberOfEmployee + payIntern * numberOfIntern
-    val averagePayCost = payCostFull/(numberOfEmployee+numberOfIntern)
-    println("Расход на зарплаты сотрудников: $payCostEmployee " +
-            "\nРасходы на зарплату сотрудников и стажеров: $payCostFull" +
-            "\nСредняя зарплата сотрудника: $averagePayCost ")
+    val payCostFull = payCostEmployee + payIntern * numberOfIntern
+    val averagePayCost = payCostFull / (numberOfEmployee + numberOfIntern)
+    println(
+        "Расход на зарплаты сотрудников: $payCostEmployee " +
+                "\nРасходы на зарплату сотрудников и стажеров: $payCostFull" +
+                "\nСредняя зарплата сотрудника: $averagePayCost "
+    )
 }
 
