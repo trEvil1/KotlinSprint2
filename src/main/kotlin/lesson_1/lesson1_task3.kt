@@ -1,7 +1,11 @@
 package org.example.lesson_1
 
 fun main() {
-    println("Тестовое рещение к уроку 1 задачи 1")
-    println("доработка")
-
+    val year = "1961"
+    var hour = "09"
+    var minute = "07"
+    println("$year год\n$hour часов \n$minute минут")
+    hour = "10"
+    minute = "55"
+    println("Время посадки: $hour:$minute ")
 }
