@@ -1,10 +1,14 @@
 package org.example.lesson_2
 
 fun main() {
-    val departureTime = 579
+    val number = 60
+    val hourOfDeparture = 9
+    val minuteOfDeparture = 39
+    val departureTime = hourOfDeparture * number + minuteOfDeparture
     val travelTime = 457
-    val hourComing = (departureTime+travelTime)/60
-    val minuteComing = (departureTime+travelTime)%60
-    println("Время прибытия поезда: $hourComing:$minuteComing")
+    val time = departureTime + travelTime
+    val hourComing = time / number
+    val minuteComing = time % number
+    println("Время прибытия поезда: ${"%02d:%02d".format(hourComing, minuteComing)}")
 
 }
