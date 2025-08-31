@@ -8,9 +8,10 @@ fun main() {
                 "\nДобыто кристаллической руды: $crystalOre"
     )
 
-    val buff = 0.2
-    val bonusIronOre = ironOre * buff
-    val bonusCrystalOre = crystalOre * buff
+    val buff = 20
+    val percent = 100.0
+    val bonusIronOre  = ironOre / percent * buff
+    val bonusCrystalOre = crystalOre / percent * buff
 
     println(
         "Добыто бонусной железной руды: ${bonusIronOre.toInt()}" +
