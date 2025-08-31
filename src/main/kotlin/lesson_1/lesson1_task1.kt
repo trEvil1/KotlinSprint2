@@ -1,4 +1,4 @@
-package org.example.lesson_2
+package org.example.lesson_1
 
 fun main() {
     val greetingForOrder = "Спасибо за ваш заказ!"
