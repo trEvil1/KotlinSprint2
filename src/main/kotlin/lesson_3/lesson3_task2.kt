@@ -1,6 +1,7 @@
 package org.example.lesson_3
 
 fun main() {
+
     var age = "20"
     val name = "Татьяна "
     var surname = "Андреева "
@@ -9,4 +10,5 @@ fun main() {
     age = "22"
     surname = "Сидорова "
     println(surname+name+patronymic+age)
+
 }
