@@ -8,5 +8,4 @@ fun main() {
     println(greetings)
     greetings = greetingsDay + userName
     println(greetings)
-
 }
