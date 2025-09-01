@@ -1,6 +1,7 @@
 package org.example.lesson_2
 const val NUMBER_OF_MINUTE_IN_HOUR: Int = 60
 fun main() {
+
     val hourOfDeparture = 9
     val minuteOfDeparture = 39
     val departureTime = hourOfDeparture * NUMBER_OF_MINUTE_IN_HOUR + minuteOfDeparture
