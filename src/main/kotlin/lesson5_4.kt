@@ -3,8 +3,8 @@ package org.example
 fun main() {
     val userName = "Zaphod"
     val userPassword = "PanGalactic"
-    val enteredName = "Zaphod"
-    val enteredPassword = "PanGalacti"
+    val enteredName = readln()
+    val enteredPassword = readln()
     if (enteredName == userName) {
         println("Введите пароль")
         if (enteredPassword == userPassword) {
@@ -17,4 +17,5 @@ fun main() {
         println("Хотите зарегестрироваться?")
         return
     }
+
 }
