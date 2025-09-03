@@ -9,15 +9,12 @@ fun main() {
     val winNumber2 = (0..42).random()
     val winNumber3 = (0..42).random()
     val listOfWinningNumber = listOf(winNumber1, winNumber2, winNumber3)
-    val quantityOfNumbers = listOfWinningNumber.intersect(listOfEnteredNumbers).size
-    if (quantityOfNumbers == 3) {
-        println("Поздравляю вы выйграли джекпот")
-    } else if (quantityOfNumbers == 2) {
-        println("Поздравляю вы выйграли крупный выйгрыш")
-    } else if (quantityOfNumbers == 1) {
-        println("Поздравляю вы выйграли утешительный приз")
-    } else {
-        println("Вы не угадали ни одного числа")
+    val quantityOfNumbers = listOfWinningNumber.intersect(listOfEnteredNumbers.toSet()).size
+    when (quantityOfNumbers) {
+        3 -> println("Поздравляю вы выйграли джекпот")
+        2 -> println("Поздравляю вы выйграли крупный выйгрыш")
+        1 -> println("Поздравляю вы выйграли утешительный приз")
+        else -> println("Вы не угадали ни одного числа")
     }
     println("Загаданные числа: $listOfWinningNumber")
 }
