@@ -1,7 +1,6 @@
 package org.example.lesson_4
-
+const val quantityOfTables = 13
 fun main() {
-    val quantityOfTables = 13
     val reservedTablesToday = 13
     val reservedTablesTomorrow = 9
     println("Доступность стольков на сегодня:${quantityOfTables > reservedTablesToday}" +
