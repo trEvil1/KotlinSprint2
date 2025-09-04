@@ -1,13 +1,14 @@
 package org.example
 
+const val USER_Name = "Zaphod"
+const val USER_PASSWORD = "PanGalactic"
 fun main() {
-    val userName = "Zaphod"
-    val userPassword = "PanGalactic"
+
     val enteredName = readln()
     val enteredPassword = readln()
-    if (enteredName == userName) {
+    if (enteredName == USER_Name) {
         println("Введите пароль")
-        if (enteredPassword == userPassword) {
+        if (enteredPassword == USER_PASSWORD) {
             println("Добро пожаловать")
         } else {
             println("Неверный пароль")
