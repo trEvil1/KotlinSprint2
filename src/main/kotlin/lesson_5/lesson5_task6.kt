@@ -8,16 +8,16 @@ fun main() {
     println("Введите ваш рост")
     val height = readln().toDouble()
     val heightInMeters = height / 100
-    val indexOfBody = weight/heightInMeters.pow(2)
-    if (indexOfBody<18.5){
-        println("Недостаточная масса тела ИМТ:${"%.2f".format(indexOfBody)}")
+    val indexOfBody = weight / heightInMeters.pow(2)
+    val index = when {
+        indexOfBody < 18.5 -> "Недостаточная масса тела ИМТ:${"%.2f".format(indexOfBody)}"
+        indexOfBody < 25 -> "Нормальная масса тела ИМТ:${"%.2f".format(indexOfBody)}"
+        indexOfBody < 30 -> "Избыточная масса тела ИМТ:${"%.2f".format(indexOfBody)}"
+        indexOfBody >= 30 -> "Ожирение ИМТ:${"%.2f".format(indexOfBody)}"
+        else -> {
+            "Неверные данные"
+        }
 
-    }else if(indexOfBody in 18.5..24.9){
-        println("Нормальная масса тела ИМТ:${"%.2f".format(indexOfBody)}")
-
-    }else if(indexOfBody in 25.0..29.9){
-        println("Избыточная масса тела ИМТ:${"%.2f".format(indexOfBody)}")
-    }else if (indexOfBody>=30){
-        println("Ожирение ИМТ:${"%.2f".format(indexOfBody)}")
     }
+    println(index)
 }
