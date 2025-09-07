@@ -1,4 +1,4 @@
-package org.example
+package org.example.lesson_5
 
 const val USER_Name = "Zaphod"
 const val USER_PASSWORD = "PanGalactic"
