@@ -1,13 +1,16 @@
 package org.example.lesson_7
 
-const val ALL_SYMBOLS = "qwertyuiopasdfghjklzxcvbnm1234567890"
+const val ALL_CHAR = "qwertyuiopasdfghjklzxcvbnm"
+const val ALL_NUMBERS = "1234567890"
 
 fun main() {
     val passwordLength = 6
-    var password = ""
-    for (i in passwordLength downTo 1) {
-        val random = ALL_SYMBOLS.random()
-        password += random
+    val password = mutableListOf<Char>()
+    for (i in passwordLength/2 downTo 1) {
+        val randomChar = ALL_CHAR.random()
+        val randomNumber = ALL_NUMBERS.random()
+        password.add(randomChar)
+        password.add(randomNumber)
     }
-    println(password)
+    println(password.joinToString(""))
 }
