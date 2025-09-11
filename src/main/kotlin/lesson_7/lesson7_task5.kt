@@ -7,8 +7,9 @@ const val NUMBERS = "1234567890"
 
 fun main() {
     val passwordLength = readln().toInt()
+    val minPassword = 6
     var password = ""
-    if (passwordLength < 6) {
+    if (passwordLength < minPassword) {
         println("Минимальная длина пароля 6 символов")
         return
     }
