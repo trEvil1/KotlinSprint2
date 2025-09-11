@@ -5,9 +5,9 @@ fun main() {
     val numberOfIngredients = readln().toInt()
     var arrayOfIngredients = emptyArray<String>()
     println("Введите $numberOfIngredients ингредиентов")
-    for (i in 0 until numberOfIngredients){
+    for (i in 0 until numberOfIngredients) {
         val addIngredient = readln()
-        arrayOfIngredients+= addIngredient
+        arrayOfIngredients += addIngredient
     }
     println(arrayOfIngredients.joinToString(","))
 }
