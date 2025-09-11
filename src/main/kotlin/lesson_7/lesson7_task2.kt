@@ -1,10 +1,11 @@
 package org.example.lesson_7
 
 fun main() {
-    var randomNumber = (1000..9999).random().toString()
+    val numberGenerator = (1000..9999).random().toString()
+    var randomNumber = numberGenerator
     var enteredNumber = ""
     while (enteredNumber != randomNumber) {
-        randomNumber = (1000..9999).random().toString()
+        randomNumber = numberGenerator
         println("Ваш код авторизации $randomNumber")
         println("Введите код:")
         enteredNumber = readln()
