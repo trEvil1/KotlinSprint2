@@ -10,7 +10,7 @@ fun main() {
     val minPassword = 6
     var password = ""
     if (passwordLength < minPassword) {
-        println("Минимальная длина пароля 6 символов")
+        println("Минимальная длина пароля $minPassword символов")
         return
     }
     for (i in passwordLength downTo 1) {
