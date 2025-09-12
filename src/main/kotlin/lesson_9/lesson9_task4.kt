@@ -4,4 +4,5 @@ fun main() {
     println("Введите 5 ингредиентов")
     val listOfIngredients = readln().split(",")
     println(listOfIngredients.toList().sorted())
+
 }
