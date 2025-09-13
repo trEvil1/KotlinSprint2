@@ -8,10 +8,11 @@ fun main() {
     if (removedIngredient !in arrayOfIngredients) {
         println("Такого ингредиента нету в списке")
         return
+    } else {
+        println("Какой ингредиент вы хотите добавить?")
+        val addedIngredient = readln()
+        val replaceIndex = arrayOfIngredients.indexOf(removedIngredient)
+        arrayOfIngredients[replaceIndex] = addedIngredient
+        println("Готово! Вы сохранили следующий список: ${arrayOfIngredients.joinToString(",")}")
     }
-    println("Какой ингредиент вы хотите добавить?")
-    val addedIngredient = readln()
-    val replaceIndex = arrayOfIngredients.indexOf(removedIngredient)
-    arrayOfIngredients[replaceIndex] = addedIngredient
-    println("Готово! Вы сохранили следующий список: ${arrayOfIngredients.joinToString(",")}")
 }
