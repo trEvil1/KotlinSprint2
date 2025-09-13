@@ -4,9 +4,10 @@ fun main() {
     val listOfIngredients = mutableListOf("яблоко", "томат", "салат")
     println("В рецепте есть базовые ингредиенты: $listOfIngredients")
     println("Желаете добавить свой ингредиент?")
-    val solution = readln()
-    val agree = "Да"
-    if (solution.equals(agree, true)) {
+    val answer = readln()
+
+
+    if (answer.equals("Да", true)) {
         println("Какой ингредиент вы хотите добавить?")
     } else return
     val addIngredient = readln()
