@@ -5,7 +5,8 @@ fun main() {
     println("Список ингредиентов: ${arrayOfIngredients.joinToString(",")}")
     println("Какой ингриедиент вы хотите убрать?")
     val removedIngredient = readln()
-    if (removedIngredient !in arrayOfIngredients) {
+    val indexOfRemove = arrayOfIngredients.indexOf(removedIngredient)
+    if (indexOfRemove == -1) {
         println("Такого ингредиента нету в списке")
         return
     } else {
