@@ -6,9 +6,7 @@ fun main() {
     val searchIngredient = readln()
     if (searchIngredient in arrayOfIngredients) {
         println("Ингридиент $searchIngredient в рецепте есть")
-    }
-    if (searchIngredient !in arrayOfIngredients) {
-        println("Ингридиента $searchIngredient в рецепте нету")
-    }
+    } else println("Ингридиента $searchIngredient в рецепте нету")
+
 }
 
