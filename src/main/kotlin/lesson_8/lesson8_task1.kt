@@ -9,9 +9,7 @@ fun main() {
     val day6 = 843
     val day7 = 750
     val arrayOfViews = intArrayOf(day7, day6, day5, day4, day3, day2, day1)
-    var allViews = 0
-    for (i in arrayOfViews) {
-        allViews += i
-    }
+    val allViews = arrayOfViews.sum()
+
     println(allViews)
 }
