@@ -12,8 +12,7 @@ fun main() {
     } else {
         println("Какой ингредиент вы хотите добавить?")
         val addedIngredient = readln()
-        val replaceIndex = arrayOfIngredients.indexOf(removedIngredient)
-        arrayOfIngredients[replaceIndex] = addedIngredient
+        arrayOfIngredients[indexOfRemove] = addedIngredient
         println("Готово! Вы сохранили следующий список: ${arrayOfIngredients.joinToString(",")}")
     }
 }
