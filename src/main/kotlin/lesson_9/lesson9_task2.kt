@@ -9,8 +9,9 @@ fun main() {
 
     if (answer.equals("Да", true)) {
         println("Какой ингредиент вы хотите добавить?")
-    } else return
-    val addIngredient = readln()
-    listOfIngredients.add(addIngredient)
-    println("Теперь в рецепте есть следующие ингредиенты: $listOfIngredients")
+        val addIngredient = readln()
+        listOfIngredients.add(addIngredient)
+        println("Теперь в рецепте есть следующие ингредиенты: $listOfIngredients")
+    }
+
 }
