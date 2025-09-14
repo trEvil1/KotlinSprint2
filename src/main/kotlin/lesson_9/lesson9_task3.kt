@@ -5,6 +5,7 @@ fun main() {
     val listOfAmountIngredients = listOf(2, 50, 15)
     println("Сколько порций нужно?")
     val amountOfPortions = readln().toInt()
+
     println(
         "На $amountOfPortions поций вам понадобится " +
                 listOfAmountIngredients.map {
