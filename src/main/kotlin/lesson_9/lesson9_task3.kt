@@ -8,11 +8,7 @@ fun main() {
 
     println(
         "На $amountOfPortions поций вам понадобится " +
-                listOfAmountIngredients.map {
-                    (it * amountOfPortions).toString() + "-" + listOfIngredients.get(
-                        listOfAmountIngredients.indexOf(it)
-                    )
-                }.joinToString(", ")
-    )
+                listOfAmountIngredients.mapIndexed { index, i -> "${i * amountOfPortions}-${listOfIngredients[index]}"}.joinToString(", "))
+//
 }
 
