@@ -5,13 +5,10 @@ fun main() {
     val listOfAmountIngredients = listOf(2, 50, 15)
     println("Сколько порций нужно?")
     val amountOfPortions = readln().toInt()
+
     println(
         "На $amountOfPortions поций вам понадобится " +
-                listOfAmountIngredients.map {
-                    (it * amountOfPortions).toString() + "-" + listOfIngredients.get(
-                        listOfAmountIngredients.indexOf(it)
-                    )
-                }.joinToString(", ")
-    )
+                listOfAmountIngredients.mapIndexed { index, i -> "${i * amountOfPortions}-${listOfIngredients[index]}"}.joinToString(", "))
+//
 }
 
