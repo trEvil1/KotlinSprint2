@@ -11,7 +11,7 @@ fun main() {
             println("$ingredient уже есть в списке")
         } else listOfIngredients.add(ingredient)
     }
-    val ingredientsString = listOfIngredients.sorted().joinToString()
+    val ingredientsString = listOfIngredients.sorted().joinToString(", ")
         .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
     println(ingredientsString)
 }
