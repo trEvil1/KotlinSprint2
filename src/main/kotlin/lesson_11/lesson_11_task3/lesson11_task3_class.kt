@@ -1,34 +1,49 @@
 package org.example.lesson_11.lesson_11_task3
 
+fun main() {
+    val status1 = Status("Пользователь заглушен")
+    val status2 = Status("Микрофон выключен")
+    val status3 = Status("Пользователь разговаривает")
+    val roomPicture = Picture("c://room.png")
+    val avatarPicture = Picture("c://avatar.png")
 
-class Room(val roomName: String, var userList: String, var status: String) {
+    val user1 = User("User1", status1, avatarPicture)
+    val user2 = User("User2", status2, avatarPicture)
 
-    fun addUser() {
-        println("Хотите добавить пользователя? Да/Нет")
-        val design = readln()
-        if (design == "Да") {
-            println("Введите имя пользователя")
-            userList = readln()
-        } else return
+    val room = Room(roomPicture, "Дискорд", mutableListOf(user2, user1))
+    room.printAllUsers()
+
+    val user3 = User("User3", status3, avatarPicture)
+    room.addUser(user3)
+    room.printAllUsers()
+
+    room.updateStatus("User3", status1)
+    room.printAllUsers()
+}
+
+class Room(val picture: Picture, val name: String, val userList: MutableList<User>) {
+    fun addUser(newUser: User) {
+        userList.add(newUser)
     }
 
-    fun replaceStatus() {
-        val status1 = "Разговаривает"
-        val status2 = "Микрофон выключен"
-        val status3 = "Пользователь заглушен"
-        println("Какому пользователю хотите изменить статус?")
-        val user = readln()
-        if (user == userList) {
-            println("Введите статус пользователя 1-$status1, 2-$status2, 3-$status3")
-            val newStatus = readln().toInt()
-            if (newStatus !in 1..3) {
-                println("Неверноче число")
+    fun updateStatus(userName: String, newStatus: Status) {
+        for (user in userList) {
+            if (user.name == userName) {
+                user.status = newStatus
             }
-            when (newStatus) {
-                1 -> status = status1
-                2 -> status = status2
-                3 -> status = status3
-            }
-        } else println("Неверное имя пользователя")
+        }
+    }
+
+    fun printAllUsers() {
+        for (user in userList) {
+            println("${user.name} ${user.status.statusName}")
+        }
+        println("")
     }
 }
+
+class User(val name: String, var status: Status, val avatar: Picture)
+
+class Status(val statusName: String)
+
+class Picture(val avatarPath: String)
