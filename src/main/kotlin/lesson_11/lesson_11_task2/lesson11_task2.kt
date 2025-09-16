@@ -18,7 +18,7 @@ class User2(val login: String, var password: String, val email: String, var bio:
             val newPassword = readln()
             password = newPassword
             println("Пароль изменен")
-            bioCheck()
+            setBio()
         } else {
             println("Пароли не совпадают")
             return
@@ -29,8 +29,8 @@ class User2(val login: String, var password: String, val email: String, var bio:
         println("$login $password $email $bio")
     }
 
-    fun bioCheck() {
-        println("Введите пол")
+    fun setBio() {
+        println("Введите информацию о пользователе")
         val writeBio = readln()
         bio = writeBio
     }
