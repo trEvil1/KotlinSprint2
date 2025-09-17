@@ -1,6 +1,6 @@
 package org.example.lesson_11
 
-class RecipeCategory(recipes: MutableList<Recipe>, name: String ) {
+class RecipeCategory(val recipes: MutableList<Recipe>, name: String, val image:String, ) {
 
 }
 
