@@ -21,21 +21,19 @@ fun main() {
     room.printAllUsers()
 }
 
-class Room(val picture: Picture, val name: String, val userList: MutableList<User>) {
+class Room(val picture: Picture, val name: String, val users: MutableList<User>) {
     fun addUser(newUser: User) {
-        userList.add(newUser)
+        users.add(newUser)
     }
 
     fun updateStatus(userName: String, newStatus: Status) {
-        for (user in userList) {
-            if (user.name == userName) {
-                user.status = newStatus
-            }
-        }
+        val findUser = users.find { it.name  == userName  }
+        findUser?.status = newStatus
+
     }
 
     fun printAllUsers() {
-        for (user in userList) {
+        for (user in users) {
             println("${user.name} ${user.status.statusName}")
         }
         println("")
@@ -44,6 +42,6 @@ class Room(val picture: Picture, val name: String, val userList: MutableList<Use
 
 class User(val name: String, var status: Status, val avatar: Picture)
 
-class Status(val statusName: String)
+class Status(val statusName: String?)
 
 class Picture(val avatarPath: String)
