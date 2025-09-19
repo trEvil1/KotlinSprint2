@@ -15,5 +15,6 @@ class WeatherCast1(
     fun printWeatherCast() {
         val kelvin = 273
         println("${dayTemp - kelvin}, ${nightTemp - kelvin}, ${rainfall}")
+
     }
 }
