@@ -1,18 +1,19 @@
 package org.example.lesson_12
 
 fun main() {
-    val weatherCast = WeatherCast1()
+    val weatherCast = WeatherCast1(300,312, true)
     weatherCast.printWeatherCast()
 }
 
-class WeatherCast1() {
-    var dayTemp = 300
-    var nightTemp = 280
-    var rainfall = true
+class WeatherCast1(
+    var dayTemp: Int,
+    var nightTemp: Int,
+    var rainfall: Boolean
+) {
+
 
     fun printWeatherCast() {
         val kelvin = 273
-        val weather = WeatherCast1()
-        println("${weather.dayTemp - kelvin}, ${weather.nightTemp - kelvin}, ${weather.rainfall}")
+        println("${dayTemp - kelvin}, ${nightTemp - kelvin}, ${rainfall}")
     }
 }
