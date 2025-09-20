@@ -6,17 +6,15 @@ fun main() {
     val iceBreakerShip = IceBreaker()
 }
 
-open class Ship(
-    var speed: Int = 10,
-    var cargoVolume: Int = 10,
-    var breakIce: Boolean = false,
-    var numberOfPassengers: Int = 50
+open class Liner(
+    open val speed: Int = 10,
+    open val cargoVolume: Int = 10,
+    open var canBreakIce: Boolean = false,
+    open var numberOfPassengers: Int = 200
 )
 
+class IceBreaker : Liner(speed = 5, cargoVolume = 5, canBreakIce = true, numberOfPassengers = 50)
 
-class IceBreaker() : Ship(speed = 5, cargoVolume = 5, breakIce = true )
 
-class Liner() : Ship(numberOfPassengers = 200)
-
-class Cargo() : Ship(speed = 5, cargoVolume = 30)
+class Cargo : Liner(speed = 5, cargoVolume = 30, numberOfPassengers = 50)
 
