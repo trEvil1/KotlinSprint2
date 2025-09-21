@@ -44,4 +44,3 @@ class Forum {
 class User(val name: String, val id: Int)
 
 class Message(var text: String, var userId: Int)
-
