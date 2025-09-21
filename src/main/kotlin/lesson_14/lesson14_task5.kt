@@ -36,8 +36,8 @@ class Chat {
         for (message in messages) {
             println("${message.authorName} ${message.text}")
             if (groupMessages.containsKey(message.id)) {
-                for (childMessage in groupMessages[message.id]!!.sortedBy { it.id }) {
-                    println("\t ${childMessage.authorName}:${childMessage.text}")
+                for (childMessage in groupMessages[message.id]?.sortedBy { it.id }!!) {
+                    println("\t${childMessage.authorName}:${childMessage.text}")
                 }
             }
         }
@@ -46,4 +46,4 @@ class Chat {
 
 class ChildMessage(val parentId: Int, id: Int, authorName: String, text: String) : Message(id, authorName, text)
 
-open class Message(var id: Int, val authorName: String, var text: String)
+open class Message(val id: Int, val authorName: String, val text: String)
