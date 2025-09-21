@@ -11,7 +11,6 @@ fun main() {
 
 abstract class WeatherStationStats() {
     abstract val message: String
-
 }
 
 class Temperature(override val message: String, val temperature: Int) : WeatherStationStats()
