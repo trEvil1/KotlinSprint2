@@ -16,7 +16,7 @@ fun main() {
     chat.printChat()
 }
 
-class Chat() {
+class Chat {
     val messagesChild = mutableListOf<ChildMessage>()
     val messages = mutableListOf<Message>()
     var index = 1
