@@ -1,42 +1,37 @@
 package org.example.lesson_14
 
 fun main() {
-    val cargoShip = Cargo1("Грузовой","грузовой корабль активирует погрузочный кран")
-    val linerShip = Liner1("Лайнер", "выдвигает горизонтальный трап со шкафута")
-    val iceBreakerShip = IceBreaker1("Ледокол", "ледокол открывает ворота со стороны кормы")
-    cargoShip.printShip(cargoShip)
-    linerShip.printShip(linerShip)
-    iceBreakerShip.printShip(iceBreakerShip)
+    val cargoShip = Cargo1("Грузовой")
+    val linerShip = Liner1()
+    val iceBreakerShip = IceBreaker1("Ледокол")
+    cargoShip.printShip()
+    linerShip.printShip()
+    iceBreakerShip.printShip()
 }
 
-open class Ship(
-    val name: String,
-    var speed: Int = 10,
-    var cargoVolume: Int = 10,
-    var breakIce: Boolean = false,
-    var numberOfPassengers: Int = 50,
-    var loadingType: String
+open class Liner1(
+    val name: String = "Лайнер",
+    val speed: Int = 10,
+    val cargoVolume: Int = 10,
+    val breakIce: Boolean = false,
+    val numberOfPassengers: Int = 200,
+    val loadingType: String = "выдвигает горизонтальный трап со шкафута"
 ) {
-    fun printShip(ship: Ship) {
+    fun printShip() {
         println(
-            "${ship.name} ${ship.speed} скорость, " +
-                    "${ship.cargoVolume} объем груза, " +
-                    "${ship.breakIce} возможность ломать лед, " +
-                    "${ship.numberOfPassengers} количество пассажиров, " +
-                    "${ship.loadingType} "
+            "${this.name} ${this.speed} скорость, " +
+                    "${this.cargoVolume} объем груза, " +
+                    "${this.breakIce} возможность ломать лед, " +
+                    "${this.numberOfPassengers} количество пассажиров, " +
+                    "${this.loadingType} "
         )
     }
 }
 
-
-class IceBreaker1(name: String, loading: String) :
-    Ship(name, loadingType = loading, speed = 5, cargoVolume = 5, breakIce = true) {
+class IceBreaker1(name: String, loading: String = "ледокол открывает ворота со стороны кормы") :
+    Liner1(name, loadingType = loading, speed = 5, cargoVolume = 5, breakIce = true) {
 }
 
-class Liner1(name: String, loading: String) :
-    Ship(name, numberOfPassengers = 200, loadingType = loading) {
-}
-
-class Cargo1(name: String, loading: String) :
-    Ship(name, speed = 5, cargoVolume = 30, loadingType = loading) {
+class Cargo1(name: String, loading: String = "грузовой корабль активирует погрузочный кран") :
+    Liner1(name, speed = 5, cargoVolume = 30, loadingType = loading) {
 }
