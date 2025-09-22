@@ -36,7 +36,7 @@ class Chat {
         for (message in messages) {
             println("${message.authorName} ${message.text}")
             if (groupMessages.containsKey(message.id)) {
-                for (childMessage in groupMessages[message.id]?.sortedBy { it.id }!!) {
+                groupMessages[message.id]?.sortedBy { it.id }?.forEach { childMessage ->
                     println("\t${childMessage.authorName}:${childMessage.text}")
                 }
             }
