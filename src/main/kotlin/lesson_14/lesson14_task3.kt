@@ -1,28 +1,30 @@
 package org.example.lesson_14
 
+const val WHITE = "белый"
+const val BLACK = "черный"
+
 fun main() {
-    val white = "белый"
-    val black = "черный"
-    val square1 = Rectangle(white, 5, 2)
-    val square2 = Rectangle(white, 7, 4)
-    val square3 = Rectangle(black, 8, 5)
-    val circle1 = Circle(white, 12)
-    val circle2 = Circle(black, 3)
-    val circle3 = Circle(white, 5)
+
+    val square1 = Rectangle(WHITE, 5, 2)
+    val square2 = Rectangle(WHITE, 7, 4)
+    val square3 = Rectangle(BLACK, 8, 5)
+    val circle1 = Circle(WHITE, 12)
+    val circle2 = Circle(BLACK, 3)
+    val circle3 = Circle(WHITE, 5)
     val figureList = listOf(square2, square1, square3, circle3, circle2, circle1)
 
-    var areaList = 0.0
-    var perimeterList = 0.0
+    var totalWhiteAreas = 0.0
+    var totalBlackPerimeter = 0.0
 
     figureList.forEach {
         if (it.color == "черный") {
-            perimeterList += it.perimeter()
+            totalBlackPerimeter += it.perimeter()
         } else {
-            areaList += it.area()
+            totalWhiteAreas += it.area()
         }
     }
-    println(perimeterList)
-    println("%.2f".format(areaList))
+    println(totalBlackPerimeter)
+    println("%.2f".format(totalWhiteAreas))
 }
 
 abstract class Figure() {
