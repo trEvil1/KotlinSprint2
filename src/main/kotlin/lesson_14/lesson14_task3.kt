@@ -1,26 +1,28 @@
 package org.example.lesson_14
 
 fun main() {
-    val square1 = Square("белый", 5, 2)
-    val square2 = Square("белый", 7, 4)
-    val square3 = Square("черный", 8, 5)
-    val circle1 = Circle("белый", 12)
-    val circle2 = Circle("черный", 3)
-    val circle3 = Circle("белый", 5)
-    val figureList = mutableListOf(square2, square1, square3, circle3, circle2, circle1)
+    val white = "белый"
+    val black = "черный"
+    val square1 = Rectangle(white, 5, 2)
+    val square2 = Rectangle(white, 7, 4)
+    val square3 = Rectangle(black, 8, 5)
+    val circle1 = Circle(white, 12)
+    val circle2 = Circle(black, 3)
+    val circle3 = Circle(white, 5)
+    val figureList = listOf(square2, square1, square3, circle3, circle2, circle1)
 
-    val areaList = mutableListOf<Double>()
-    val perimeterList = mutableListOf<Double>()
+    var areaList = 0.0
+    var perimeterList = 0.0
 
-    figureList.map {
+    figureList.forEach {
         if (it.color == "черный") {
-            perimeterList.add(it.perimeter())
+            perimeterList += it.perimeter()
         } else {
-            areaList.add(it.area())
+            areaList += it.area()
         }
     }
-    println(perimeterList.sum())
-    println("%.2f".format(areaList.sum()))
+    println(perimeterList)
+    println("%.2f".format(areaList))
 }
 
 abstract class Figure() {
@@ -34,19 +36,19 @@ abstract class Figure() {
 
 class Circle(override val color: String, val radius: Int) : Figure() {
     override fun area(): Double {
-        val area = 3.14 * (radius * radius)
+        val area = Math.PI * (radius * radius)
         return area
     }
 
     override fun perimeter(): Double {
-        val perimeter = 2 * 3.14 * radius
+        val perimeter = 2 * Math.PI * radius
         return perimeter
     }
 }
 
-class Square(override val color: String, val width: Int, val height: Int) : Figure() {
+class Rectangle(override val color: String, val width: Int, val height: Int) : Figure() {
     override fun perimeter(): Double {
-        val perimeter = (width + height * 2).toDouble()
+        val perimeter = ((width + height) * 2).toDouble()
         return perimeter
     }
 
