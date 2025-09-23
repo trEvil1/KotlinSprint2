@@ -26,4 +26,3 @@ class RectanglePack(private val length: Double, private val width: Double, priva
         println("Посылка прямоугольник ее площадь $area")
     }
 }
-
