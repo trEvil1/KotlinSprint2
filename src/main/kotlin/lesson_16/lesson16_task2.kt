@@ -3,18 +3,21 @@ package org.example.lesson_16
 fun main() {
     val circle = Circle(5)
     circle.area()
-    circle.perimeter()
+    println("Периметр %.2f".format(circle.perimeter()))
+    println("Площадь %.2f".format(circle.area()))
 }
 
+private const val PI = 3.14
+
 class Circle(private val radius: Int) {
-    private val pi = 3.14
-    fun perimeter() {
-        val perimeter = 2 * pi * radius
-        println("Периметр круга %.2f".format(perimeter))
+
+    fun perimeter(): Double {
+        val perimeter = 2 * PI * radius
+        return perimeter
     }
 
-    fun area() {
-        val area = pi * (radius * radius)
-        println("Площадь круга %.2f".format(area))
+    fun area(): Double {
+        val area = PI * Math.pow(radius.toDouble(), 2.0)
+        return area
     }
 }
