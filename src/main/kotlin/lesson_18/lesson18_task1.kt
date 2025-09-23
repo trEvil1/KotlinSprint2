@@ -8,10 +8,10 @@ fun main() {
 
 class Order() {
     fun getOrder(order: String, orderNumber: Int) {
-        println("Номер заказа $orderNumber заказ: $order")
+        println("Заказан товар $order")
     }
 
     fun getOrder(order: List<String>, orderNumber: Int) {
-        println("Номер заказа $orderNumber заказ: $order")
+        println("Заказаны следующие товары $order")
     }
 }
