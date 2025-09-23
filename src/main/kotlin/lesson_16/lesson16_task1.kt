@@ -5,7 +5,7 @@ fun main() {
     dice.print()
 }
 
-class Dice(val randomNumber: Int = (1..6).random()) {
+class Dice(private val randomNumber: Int = (1..6).random()) {
     fun print() {
         println(randomNumber)
     }
