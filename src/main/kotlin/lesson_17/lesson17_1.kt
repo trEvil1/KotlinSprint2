@@ -1,18 +1,18 @@
 package org.example.lesson_17
 
 fun main() {
-    val player = Player("Вопрос", "Ответ")
+    val player = QuizItem("Вопрос", "Ответ")
     println(player.question)
     println(player.answer)
 }
 
-class Player(val newQuestion: String, val newAnswer: String) {
-    var question = newQuestion
+class QuizItem(val question: String, val answer: String) {
+    var quest = this.question
         get() = field
 
-    var answer = newAnswer
+    var reply = this.answer
         get() = field
-        set(value: String) {
+        set(value) {
             field = value
         }
 }
