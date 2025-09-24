@@ -6,11 +6,11 @@ fun main() {
     println(player.answer)
 }
 
-class QuizItem(val question: String, val answer: String) {
-    var quest = this.question
+class QuizItem(question: String, answer: String) {
+    var question: String = question
         get() = field
 
-    var reply = this.answer
+    var answer: String = answer
         get() = field
         set(value) {
             field = value
