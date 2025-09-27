@@ -8,11 +8,12 @@ fun main() {
     println(user.newPassword)
 }
 
-class User(private var login: String, private val password: String) {
-    var newPassword = password.replace(Regex("(?=.)."), "*")
-        get() = field
+class User(private var login: String, password: String) {
+    var newPassword = password
+        get() = field.replace(Regex("(?=.)."), "*")
         set(value) {
             println("Вы не можете изменить пароль")
+            field = value
         }
     var newLogin = login
         get() = field
@@ -21,6 +22,6 @@ class User(private var login: String, private val password: String) {
             if (value != login) {
                 login = value
                 println("Логин успешно изменен на $login")
-            }else println("У вас такой же логин")
+            } else println("У вас такой же логин")
         }
 }
