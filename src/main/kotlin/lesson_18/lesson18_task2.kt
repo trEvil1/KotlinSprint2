@@ -8,30 +8,17 @@ fun main() {
     diceList.forEach { it.throwDice() }
 }
 
-abstract class Dice(var dice: Int) {
+abstract class Dice(var faces: Int) {
     open fun throwDice() {
-        dice = (1..dice).random()
-        println(dice)
+        println((1..faces).random())
+
     }
 }
 
-class Dice4 : Dice(4) {
-    override fun throwDice() {
-        dice = (1..dice).random()
-        println(dice)
-    }
-}
+class Dice4 : Dice(4)
 
-class Dice6 : Dice(6) {
-    override fun throwDice() {
-        dice = (1..dice).random()
-        println(dice)
-    }
-}
+class Dice6 : Dice(6)
 
-class Dice8 : Dice(8) {
-    override fun throwDice() {
-        dice = (1..dice).random()
-        println(dice)
-    }
-}
+class Dice8 : Dice(8)
+
+
