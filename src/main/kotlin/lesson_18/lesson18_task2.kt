@@ -1,30 +1,31 @@
 package org.example.lesson_18
 
 fun main() {
-    val throw1 = Dice4()
-    val throw2 = Dice6()
-    val throw3 = Dice8()
-    val diceList = listOf(throw1, throw2, throw3)
-    println(diceList.forEach { it.throwDice() })
+    val dice4 = Dice4((1..4).random())
+    val dice6 = Dice6((1..6).random())
+    val dice8 = Dice8((1..8).random())
+    val diceList = listOf(dice4, dice6, dice8)
+    diceList.forEach { it.throwDice() }
 }
 
-interface Throw {
-    fun throwDice()
+abstract class Throw {
+    open fun throwDice() {
+    }
 }
 
-class Dice4(val dice: Int = (1..4).random()) : Throw {
+class Dice4(val dice: Int) : Throw() {
     override fun throwDice() {
         println(dice)
     }
 }
 
-class Dice6(val dice: Int = (1..6).random()) : Throw {
+class Dice6(val dice: Int) : Throw() {
     override fun throwDice() {
         println(dice)
     }
 }
 
-class Dice8(var dice: Int = (1..8).random()) : Throw {
+class Dice8(var dice: Int) : Throw() {
     override fun throwDice() {
         println(dice)
     }
