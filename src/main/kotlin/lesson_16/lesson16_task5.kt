@@ -11,19 +11,19 @@ fun main() {
     player.heal(5)
 }
 
-class Player(val name: String, var hp: Int, var power: Int) {
-    private fun death() {
-        if (hp <= 0) {
-            power = 0
-            println("$name умер")
-        }
+class Player(val name: String, private var hp: Int, private var power: Int) {
+    private fun die() {
+        power = 0
+        hp = 0
+        println("$name умер")
     }
+
 
     fun takeDamage(damage: Int) {
         if (hp > 0) {
             hp -= damage
-            if (hp < 0) {
-                death()
+            if (hp <= 0) {
+                die()
                 return
             }
             println("Вы получили $damage урона ваше текущее здоровье $hp")
