@@ -1,17 +1,17 @@
 package org.example.lesson_18
 
 fun main() {
-    val order = Order()
-    order.getOrder("веревка", 1)
-    order.getOrder(listOf("лопата", "савок"), 2)
+    val order = Order(1)
+    order.printOrder("веревка", order.orderNumber)
+    order.printOrder(listOf("лопата", "савок"), order.orderNumber)
 }
 
-class Order() {
-    fun getOrder(order: String, orderNumber: Int) {
+class Order(val orderNumber: Int) {
+    fun printOrder(order: String, orderNumber: Int) {
         println("Заказан товар $order")
     }
 
-    fun getOrder(order: List<String>, orderNumber: Int) {
+    fun printOrder(order: List<String>, orderNumber: Int) {
         println("Заказаны следующие товары $order")
     }
 }
