@@ -10,5 +10,4 @@ fun main() {
     openDoor(player)
 }
 
-
 class Player(val name: String, val haveKey: Boolean)
