@@ -6,36 +6,37 @@ fun main() {
     val dog = Dog(isSleep = false)
     val cat = Cat(isSleep = false)
     val animals = listOf<Action>(fox, dog, cat)
-    println(animals.forEach { it.actionFeed() })
-}
-interface Action {
-    fun actionFeed()
-    fun actionSleep()
+    animals.forEach { it.eat() }
 }
 
-class Fox(val name: String = "Лиса", val food: String = "ягода", val isSleep: Boolean) : Action {
-    override fun actionFeed() {
-        println("$name -> $food")
-    }
-
-    override fun actionSleep() {
-    }
+abstract class Action() {
+    abstract fun eat()
+    abstract fun sleep()
 }
 
-class Cat(val name: String = "Кошка", val food: String = "рыба", val isSleep: Boolean) : Action {
-    override fun actionFeed() {
-        println("$name -> $food")
+class Fox(val name: String = "Лиса", val food: String = "ягода", val isSleep: Boolean) : Action() {
+    override fun eat() {
+        println("$name -> ест ${food.replace('а', 'ы')}")
     }
 
-    override fun actionSleep() {
+    override fun sleep() {
     }
 }
 
-class Dog(val name: String = "Собака", val food: String = "кость", val isSleep: Boolean) : Action {
-    override fun actionFeed() {
-        println("$name -> $food")
+class Cat(val name: String = "Кошка", val food: String = "рыба", val isSleep: Boolean) : Action() {
+    override fun eat() {
+        println("$name -> ест ${food.replace('а', 'у')}")
     }
 
-    override fun actionSleep() {
+    override fun sleep() {
+    }
+}
+
+class Dog(val name: String = "Собака", val food: String = "кость", val isSleep: Boolean) : Action() {
+    override fun eat() {
+        println("$name -> ест ${food.replace('ь', 'и')}")
+    }
+
+    override fun sleep() {
     }
 }
