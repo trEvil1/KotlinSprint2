@@ -5,9 +5,9 @@ fun main() {
     println("${folder.folderName} ${folder.files}")
 }
 
-class Folder(private val name: String, private val filesCount: Int, val flagSecret: Boolean) {
+class Folder(private val name: String, private val filesCount: Int, private val isSecret: Boolean) {
     val folderName = name
-        get() = if (flagSecret == true) field else "скрытая папка"
+        get() = if (isSecret) field else "скрытая папка"
     val files = filesCount
-        get() = if (flagSecret == true) field else 0
+        get() = if (isSecret) field else 0
 }
