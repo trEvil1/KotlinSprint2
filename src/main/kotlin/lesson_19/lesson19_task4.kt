@@ -2,7 +2,6 @@ package org.example.lesson_19
 
 fun main() {
     val tank = Tank()
-    tank.shot()
     tank.changeBullet(Bullets.RED)
     tank.shot()
 
