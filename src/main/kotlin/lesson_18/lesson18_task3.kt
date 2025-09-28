@@ -2,41 +2,36 @@ package org.example.lesson_18
 
 fun main() {
 
-    val fox = Fox(isSleep = false)
-    val dog = Dog(isSleep = false)
-    val cat = Cat(isSleep = false)
-    val animals = listOf<Action>(fox, dog, cat)
+    val fox = Fox()
+    val dog = Dog()
+    val cat = Cat()
+    val animals = listOf<Animal>(fox, dog, cat)
     animals.forEach { it.eat() }
 }
 
-abstract class Action() {
+abstract class Animal(val name: String, val isSleep: Boolean) {
     abstract fun eat()
-    abstract fun sleep()
-}
-
-class Fox(val name: String = "Лиса", val food: String = "ягода", val isSleep: Boolean) : Action() {
-    override fun eat() {
-        println("$name -> ест ${food.replace('а', 'ы')}")
-    }
-
-    override fun sleep() {
+    fun sleep() {
+        if (isSleep) {
+            println("$name -> спит")
+        } else println("$name -> не спит")
     }
 }
 
-class Cat(val name: String = "Кошка", val food: String = "рыба", val isSleep: Boolean) : Action() {
+class Fox(val food: String = "ягода") : Animal("Лиса", true) {
     override fun eat() {
-        println("$name -> ест ${food.replace('а', 'у')}")
-    }
-
-    override fun sleep() {
+        println("$name -> ест ягоды}")
     }
 }
 
-class Dog(val name: String = "Собака", val food: String = "кость", val isSleep: Boolean) : Action() {
+class Cat(val food: String = "рыба") : Animal("Кошка", true) {
     override fun eat() {
-        println("$name -> ест ${food.replace('ь', 'и')}")
+        println("$name -> ест рыбу}")
     }
+}
 
-    override fun sleep() {
+class Dog(val food: String = "кость") : Animal("Собака", true) {
+    override fun eat() {
+        println("$name -> ест кости}")
     }
 }
