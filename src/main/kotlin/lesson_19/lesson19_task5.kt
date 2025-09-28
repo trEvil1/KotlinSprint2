@@ -7,7 +7,7 @@ fun main() {
         val name = readln()
         println("Введите пол мужчина/женщина")
         val gender = readln()
-        if (gender == Gender.MALE.name) {
+        if ((gender).lowercase() == Gender.MALE.name) {
             val person = Person(name, Gender.MALE)
             cardFile.add(person)
         } else {
