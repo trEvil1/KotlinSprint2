@@ -8,10 +8,9 @@ fun main() {
     diceList.forEach { it.throwDice() }
 }
 
-abstract class Dice(var faces: Int) {
-    open fun throwDice() {
+abstract class Dice(val faces: Int) {
+    fun throwDice() {
         println((1..faces).random())
-
     }
 }
 
@@ -20,5 +19,3 @@ class Dice4 : Dice(4)
 class Dice6 : Dice(6)
 
 class Dice8 : Dice(8)
-
-
